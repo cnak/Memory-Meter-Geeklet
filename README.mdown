@@ -1,0 +1,50 @@
+
+
+Inspired by & adapted script from [Disk Capacity Meter](http://www.macosxtips.co.uk/geeklets/system/disk-capacity-meter/)
+
+#Memory Meter Geeklet
+
+![Imgur](http://i.imgur.com/Or7HEtWb.png)
+
+##What is a Geeklet?
+
+GeekTool is an app for the Mac that allows you to display different kinds of information on your desktop. These bits of information are called *Geeklets*, and they can be text, images, files, and the output of shell commands.
+
+##What is Memory Meter?
+
+A small glowing circle that shows the total used RAM .
+
+
+INSTRUCTIONS
+------------
+
+1.	Move MemoryMeter folder to your preferred directory, eg to **Documents/Geektool/**
+
+2.	Edit the PATH variable in MM.scpt to match the path of the MemoryMeter folder,
+	eg **/Users/YOURUSERNAME/Documents/GeekTool/MemoryMeter/**
+
+3.	Open GeekTool and set up a shell geeklet to do:
+
+	`osascript /PATH/MM.scpt`
+
+	Where PATH is the path from step 2.
+
+4.	Then set up an image geeklet with image:
+
+	`file://localhost/PATH/temp.png`
+
+	Where PATH is the path from step 2.
+	
+5. 	Set refresh rate of the geeklets to what you like, I prefer 3600 seconds.
+
+####Add Ram used text overlay
+
+1. Open GeekTool and set up a shell geeklet to do:
+<code> top -l 1 | awk '/PhysMem/ {print $2}' | sed s/M//
+
+2. Change the font size and place it over the circle image.
+
+
+##Credits
+
+http://www.macosxtips.co.uk/geeklets/system/disk-capacity-meter/
